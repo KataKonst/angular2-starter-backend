@@ -1,6 +1,6 @@
 package com.realdolmen.angular2.intro;
 
-import org.gustavo.angular2.starter.BackendApplication;
+import com.BackendApplication;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.web.WebAppConfiguration;

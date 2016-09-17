@@ -15,7 +15,7 @@ export class Application {
     public name : String = null;
 
     public handleClick() : void {
-        this.name = "Krusty";
+        this.name = "Ksty";
     }
 
 }

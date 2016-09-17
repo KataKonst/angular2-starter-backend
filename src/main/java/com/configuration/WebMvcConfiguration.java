@@ -1,14 +1,15 @@
-package org.gustavo.angular2.starter.configuration;
+package com.configuration;
 
 import java.io.File;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 @Configuration
-@ComponentScan(value={"com.realdolmen.angular2.intro"})
+@EnableWebSecurity
 public class WebMvcConfiguration extends WebMvcConfigurerAdapter {
 
 	@Override
@@ -26,4 +27,5 @@ public class WebMvcConfiguration extends WebMvcConfigurerAdapter {
 	    registry.addResourceHandler("/app-src/**")
         		.addResourceLocations(currentPath + "/src/main/web/frontend/src/");
     }
+
 }

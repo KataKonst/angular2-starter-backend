@@ -1,4 +1,4 @@
-package org.gustavo.angular2.starter.controller;
+package com.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +14,9 @@ public class RootController {
 	public String init() {
 		return "/app/index.html";
 	}
+
+	@RequestMapping("/login.html")
+	public  String login() { return "/app/login.html"; }
 
 }
    

@@ -23,10 +23,12 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="angular2-starter-backend" />
+        <module name="orar" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="angular2-starter-backend" target="1.8" />
+      <module name="orar" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
