@@ -16,7 +16,9 @@ public class RootController {
 	}
 
 	@RequestMapping("/login.html")
-	public  String login() { return "/app/login.html"; }
+	public  String login() { return "/app/login.html";
+		
+	}
 
 }
    
