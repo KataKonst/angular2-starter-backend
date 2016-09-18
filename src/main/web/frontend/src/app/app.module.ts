@@ -19,12 +19,20 @@ import {WikipediaService} from "./services/DataService";
 import {UserService} from "./services/UserService";
 import {JsonpModule} from '@angular/http'
 import {RegisterComponent} from "./components/user/RegisterComponent"
+import {LoginComponent} from "./components/user/LoginComponent"
+import {IndexComponent} from "./components/user/IndexComponent"
+import {WelcomeUserComponent} from "./components/user/WelcomeUserComponent"
+
+
+
 
 
 // Application wide providers
 const APP_PROVIDERS = [
   ...APP_RESOLVER_PROVIDERS,
-  AppState
+  AppState,
+  WikipediaService,
+  UserService
 
 ];
 
@@ -41,8 +49,10 @@ type StoreType = {
   bootstrap: [ App ],
   declarations: [
     App,
-      NoContent,
-      RegisterComponent
+      RegisterComponent,
+      LoginComponent,
+      IndexComponent,
+      WelcomeUserComponent
 
   ],
   imports: [ // import Angular's modules
@@ -54,9 +64,7 @@ type StoreType = {
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,
-    APP_PROVIDERS,
-      WikipediaService,
-      UserService
+    APP_PROVIDERS
   ]
 })
 export class AppModule {

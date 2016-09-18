@@ -9,17 +9,17 @@ var http_1 = require('@angular/http');
 require('rxjs/Rx');
 require('rxjs/add/operator/share');
 require('rxjs/add/operator/map');
+var md5_1 = require('../utils/md5');
 var UserService = (function () {
     function UserService(jsonp) {
         this.jsonp = jsonp;
     }
     UserService.prototype.register = function (user) {
-        var search = new http_1.URLSearchParams();
-        search.set('name', user.name);
-        search.set('email', user.email);
-        search.set('password', user.password);
-        alert(user.name);
-        return this.jsonp.get("http://localhost:8080/create?name=" + user.name + "&" + "email=" + user.email + "&password=" + user.password).map(function (x) { return x.text(); });
+        var params = new http_1.URLSearchParams();
+        params.set('name', user.name);
+        params.set('email', user.email);
+        params.set('password', md5_1.md5(user.password));
+        return this.jsonp.get('http://localhost:8080/create', { search: params }).map(function (x) { return x.text(); });
     };
     UserService = __decorate([
         core_1.Injectable()

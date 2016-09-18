@@ -60,9 +60,10 @@ public class User {
 
     }
 
-    public User(String email, String name) {
+    public User(String email, String name,String password) {
         this.email = email;
         this.name = name;
+        this.password=password;
     }
 
     // Getter and setter methods

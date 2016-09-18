@@ -1,5 +1,6 @@
 package com.controller;
 
+import com.models.Result;
 import com.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.web.HttpMessageConverters;
@@ -19,7 +20,7 @@ import java.util.Collections;
  * Created by katakonst on 9/17/16.
  */
 @Controller
-public class OrarController {
+public class UserController {
 
 
     @RequestMapping("/create")
@@ -27,8 +28,7 @@ public class OrarController {
     public User create(String email, String name,String password) {
         String userId = "";
         try {
-            User user = new User(email, name);
-            user.setPassword(password);
+            User user = new User(email, name,password);
             userDao.save(user);
             userId = String.valueOf(user.getId());
             return  user;
@@ -37,6 +37,18 @@ public class OrarController {
             ex.printStackTrace();
             return null;
         }
+    }
+
+    @RequestMapping("/checkPass")
+    @ResponseBody
+    public Result checkPass(String name,String password) {
+      User usr=  userDao.findByName(name);
+        if(usr==null) {
+            return new Result("false");
+        }
+        System.out.println(usr.getPassword());
+        return  new Result(String.valueOf(usr.getPassword().equals(password)));
+
     }
     @Autowired
     private UserRepository userDao;
