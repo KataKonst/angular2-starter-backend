@@ -1,0 +1,7 @@
+<button type="button" (click)="handleClick()">Click Me</button>
+<div *ngIf="name != null">Hello, {{name}} </div>
+<nav>
+    <a routerLink="/register" routerLinkActive="active">register</a>
+    <a routerLink="/login" routerLinkActive="active">login</a>
+</nav>
+<router-outlet></router-outlet>

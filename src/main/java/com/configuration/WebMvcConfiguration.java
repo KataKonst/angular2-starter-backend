@@ -18,7 +18,7 @@ public class WebMvcConfiguration extends WebMvcConfigurerAdapter {
 		String currentPath = new File(".").getAbsolutePath();
 		currentPath = "file:///" + currentPath;
 		// This one adds a link to the distribution folder
-		registry.addResourceHandler("/app/**")
+		registry.addResourceHandler("/**")
 				.addResourceLocations(currentPath + "/src/main/web/frontend/dist/");
 		// This one adds a link to the sources folder for debugging in the browser. This must be configured in conjuction
 		// with the following configuration in tsconfig.json file: 

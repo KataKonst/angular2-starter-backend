@@ -10,9 +10,9 @@ public class RootController {
 
 	// in index.html: baseref = /app/
 	// in main.ts: APP_BASE_HREF = /app/root (configuration for routing)
-	@RequestMapping("/app/root/**")
+	@RequestMapping("/")
 	public String init() {
-		return "/app/index.html";
+		return "/index.html";
 	}
 
 	@RequestMapping("/login.html")
